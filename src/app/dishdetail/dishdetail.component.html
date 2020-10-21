@@ -29,22 +29,19 @@
     </div>
 
      
-        <div fxFlex="60" *ngIf="dish.comments">
-            <h1>Comments</h1>
-          
-              <mat-list>
-                <mat-list-item *ngFor="let comment of dish.comments">
-                  <p matLine>{{comment.comment}}</p>
-                  <p matLine>{{comment.rating}} Stars</p>
-                  <p matLine>--{{comment.author}} {{ comment.date |date }}</p>
-                  
-
-                </mat-list-item>
-              </mat-list>
-    
-    
-    
-    </div>
+        <div class="container"
+        fxLayout="column"
+        fxLayoutGap="10px">
+   
+     <mat-list fxFlex = "40" *ngIf="dish"><h1>Comments</h1>
+         <mat-list-item *ngFor="let item of dish.comments">
+           <p mat-line>{{item.comment}}</p>
+           <p mat-line>{{item.rating}} stars</p>
+           <p mat-line>--{{item.author}} {{item.date | date}}</p>
+         </mat-list-item>
+   
+     </mat-list>
+     </div>
 </div>
      
     
